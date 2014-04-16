@@ -1,9 +1,17 @@
-class StatGenerator
-  def init(application_graph)
-    @application_graph = application_graph
+class StatsGenerator
+  def initialize(graph: nil, seed: Random.new_seed)
+    if graph.nil?
+      raise "An application graph must be provided"
+    end
+    @random = Random.new(seed)
+    @app_graph = graph
   end
 
-  def generate(number_of_sessions: 1)
-    
+  def generate(session_count: 1)
+    #current_location = 'home'
+    [[]]
   end
+
+  private
+  STARTING_POINT = 'home'
 end

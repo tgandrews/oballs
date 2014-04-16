@@ -4,6 +4,6 @@ require 'irb'
 
 class ApplicationGraphCreator
   def self.create
-    Plexus::Digraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home', 'playback', 'categories']
+    Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home', 'playback', 'categories']
   end
 end

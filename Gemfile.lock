@@ -1,10 +1,28 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.1.0)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    facets (2.9.3)
+    i18n (0.6.9)
+    json (1.8.1)
     minitest (5.3.3)
+    plexus (0.5.10)
+      activesupport
+      facets
+      rake
+    rake (10.3.0)
+    thread_safe (0.3.3)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   minitest (~> 5.3.3)
+  plexus (~> 0.5.10)
