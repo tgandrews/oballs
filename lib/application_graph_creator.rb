@@ -3,7 +3,7 @@ require 'plexus/dot'
 require 'irb'
 
 class ApplicationGraphCreator
-  def self.create
+  def self.create_dummy
     Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home', 'playback', 'categories']
   end
 

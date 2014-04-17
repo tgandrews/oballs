@@ -7,14 +7,14 @@ class StatsGenerator
     @app_graph = graph
   end
 
-  def generate(session_count: 1, session_length: 5)
+  def generate(session_count: 1, max_session_length: 5)
     sessions = []
 
     for i in 1..session_count
       session = ['home']
       current_location = STARTING_POINT
 
-      for i in 1..(session_length - 1)
+      for i in 1..(max_session_length - 1)
         possible_destinations = @app_graph.adjacent(current_location)
         possible_destinations.push 'exit'
 
