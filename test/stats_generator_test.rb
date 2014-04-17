@@ -3,7 +3,7 @@ require_relative '../lib/application_graph_creator'
 require 'minitest/autorun'
 
 
-class StatsGeneratorTest < Minitest::Unit::TestCase
+class StatsGeneratorTest < Minitest::Test
   def setup
     graph =  ApplicationGraphCreator.create
     @stats_generator = StatsGenerator.new(graph: graph, seed: 12345678911)
