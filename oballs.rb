@@ -17,14 +17,19 @@ working_application = ApplicationGraphCreator.create_dummy
 working_application.write_to_graphic_file('jpg', 'dummy_app')
 puts '...done'
 
-puts 'Generating stats from app graph...'
-working_app_stats_generator = StatsGenerator.new graph: working_application
-working_sessions = working_app_stats_generator.generate session_count: 10_000, max_session_length: 10
+puts 'Generating broken app graph...'
+broken_application = ApplicationGraphCreator.create_broken
+broken_application.write_to_graphic_file('jpg', 'broken_app')
 puts '...done'
 
-puts 'Generating graph from dummy stats...'
-working_application_from_stats = ApplicationGraphCreator.create_from_sessions sessions: working_sessions
-working_application_from_stats.write_to_graphic_file('jpg', 'dummy_app_from_stats')
+puts 'Generating stats from broken app graph...'
+broken_app_stats_generator = StatsGenerator.new graph: broken_application
+broken_sessions = broken_app_stats_generator.generate session_count: 10_000, max_session_length: 10
+puts '...done'
+
+puts 'Generating graph from broken app stats...'
+broken_application_graph_from_stats = ApplicationGraphCreator.create_from_sessions sessions: broken_sessions
+broken_application_graph_from_stats.write_to_graphic_file('jpg', 'broken_app_from_stats')
 puts '...done'
 
 # stat_generator = StatsGenerator.new(application_graph)

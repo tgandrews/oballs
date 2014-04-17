@@ -7,6 +7,10 @@ class ApplicationGraphCreator
     Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home', 'playback', 'categories']
   end
 
+  def self.create_broken
+Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home']
+  end
+
   def self.create_from_sessions(sessions: [])
     graph = Plexus::DirectedMultiGraph.new
     graph.add_vertex! 'home'
