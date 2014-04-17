@@ -12,9 +12,9 @@ libraries.each do |path_name|
 end
 
 
-puts 'Generating dummy app graph...'
-working_application = ApplicationGraphCreator.create_dummy
-working_application.write_to_graphic_file('jpg', 'dummy_app')
+puts 'Generating working app graph...'
+working_application = ApplicationGraphCreator.create_working
+working_application.write_to_graphic_file('jpg', 'working_app')
 puts '...done'
 
 puts 'Generating broken app graph...'
@@ -31,6 +31,12 @@ puts 'Generating graph from broken app stats...'
 broken_application_graph_from_stats = ApplicationGraphCreator.create_from_sessions sessions: broken_sessions
 broken_application_graph_from_stats.write_to_graphic_file('jpg', 'broken_app_from_stats')
 puts '...done'
+
+puts 'Graph differences: '
+results = GraphComparitor.compare graph_a: working_application, graph_b: broken_application_graph_from_stats
+for result in results
+  puts result
+end
 
 # stat_generator = StatsGenerator.new(application_graph)
 # stat_generator.generate number_of_sessions: 10_000

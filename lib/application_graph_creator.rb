@@ -3,12 +3,12 @@ require 'plexus/dot'
 require 'irb'
 
 class ApplicationGraphCreator
-  def self.create_dummy
+  def self.create_working
     Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home', 'playback', 'categories']
   end
 
   def self.create_broken
-Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home']
+    Plexus::DirectedMultiGraph['home', 'categories', 'categories', 'home', 'categories', 'playback', 'playback', 'home']
   end
 
   def self.create_from_sessions(sessions: [])

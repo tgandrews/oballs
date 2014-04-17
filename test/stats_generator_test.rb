@@ -5,7 +5,7 @@ require 'minitest/autorun'
 
 class StatsGeneratorTest < Minitest::Test
   def setup
-    graph =  ApplicationGraphCreator.create
+    graph =  ApplicationGraphCreator.create_working
     @stats_generator = StatsGenerator.new(graph: graph, seed: 12345678911)
   end
 
