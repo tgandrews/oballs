@@ -15,7 +15,7 @@ GEM
       activesupport
       facets
       rake
-    rake (10.3.0)
+    rake (13.0.3)
     thread_safe (0.3.3)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
